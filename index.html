@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+    <title>Simple To Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+	
+   
+</head>
+<body >
+
+<table width="100%" border="0" cellpadding="20">
+  <tbody>
+	  <thead> </thead>
+    <tr>
+      <td width="14%" height="358"><p style="vertical-align: bottom"><img src="pc1.jpg" width="74" height="245" alt=""/></p></td>
+      <td width="72%">
+		 <div>
+		<h1 align="center">Keep a track of your tasks !!</h1>
+      <p id="newtask" style="align-items: center; align-self: center;">
+        <input type="text" placeholder="Input your desired task " autocomplete="on" >
+        <button style="align-self: center; color: #000000; text-align: center;" id="push">Add</button>
+      </p>
+		<p><b>To Do List Tasks</b></p>
+        <div id="tasks"></div>
+    </div>
+	  </td>
+     <td width="14%" height="358"><p style="vertical-align: bottom"><img src="pc2.png" width="74" height="245" alt=""/></p></td>
+    </tr>
+  </tbody>
+</table>
+<script>
+	document.querySelector('#push').onclick = function(){
+    if(document.querySelector('#newtask input').value.length == 0){
+        alert("No Task Entered")
+    }
+    else{
+        document.querySelector('#tasks').innerHTML += `
+            <div class="task">
+                <span id="taskname">
+                    ${document.querySelector('#newtask input').value}
+                </span>
+                <button class="delete">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+        `;
+
+        var current_tasks = document.querySelectorAll(".delete");
+        for(var i=0; i<current_tasks.length; i++){
+            current_tasks[i].onclick = function(){
+                this.parentNode.remove();
+            }
+        }
+
+        var tasks = document.querySelectorAll(".task");
+        for(var i=0; i<tasks.length; i++){
+            tasks[i].onclick = function(){
+                this.classList.toggle('completed');
+            }
+        }
+
+        document.querySelector("#newtask input").value = "";
+    }
+}
+	</script>
+	
+
+<style>
+	h1{
+		font-family:"aguafina-script";
+		font-style: oblique;
+		under
+	}
+	p{
+		font-family:"aguafina-script";
+		text-align: center;
+		font-weight: 300;
+		font-size: 18px;
+		
+	}
+	body{
+    height: 100vh;
+    background:#108BDD;
+   
+}
+
+#newtask{
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px 20px;
+    border-radius: 5px;
+	margin-bottom: 30px;
+ 
+}
+#newtask input{
+    width: 70%;
+    width: 70%;
+    height: 45px;
+    font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    font-size: 15px;
+    border: 3px solid #d1d3d4;
+    padding: 10px;
+    color: #111111;
+    font-weight:bold;
+    position: relative;
+    border-radius: 5px;
+}
+#newtask input:focus{
+    outline: none;
+    border-color:green;
+}
+
+#newtask button{
+    align-self: center;
+    width: 20%;
+	padding-left: 10px;
+    height: 45px;
+    border-radius: 5px;
+    font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    font-weight: 500;
+    font-size: 16px;
+    background-color:#1FE663;
+    border:solid;
+	border-color:#D7D7D7 ;
+    cursor: pointer;
+}
+#tasks{
+    background-color: #ffffff;
+    padding: 30px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 92%;
+    position: relative;
+}
+.task{
+    background-color: #ffffff;
+    height: 50px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #d1d3d4;
+    cursor: pointer;
+}
+.task span{
+   font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    font-size: 15px;
+    font-weight: 400;
+}
+.task button{
+    background-color: red;
+    color: #ffffff;
+    height: 100%;
+    width: 40px;
+    border-radius: 5px;
+    border: none;
+    outline:dotted;
+	outline-color: aqua;
+	outline-width: medium;
+	
+}
+.completed{
+    text-decoration: line-through;
+	color: darkgrey;
+	
+}
+	</style>
+</body>
+</html>
