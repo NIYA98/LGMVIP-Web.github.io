@@ -1,31 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!doctype html>
+<html lang="en"><head>
 	
     <title>Simple To Do List</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 	
    
 </head>
-<body >
+<body>
 
-<table width="100%" border="0" cellpadding="20">
+<table width="100%" border="0" cellpadding="3">
   <tbody>
-	  <thead> </thead>
-    <tr>
-      <td width="14%" height="358"><p style="vertical-align: bottom"><img src="pc1.jpg" width="74" height="245" alt=""/></p></td>
-      <td width="72%">
-		 <div>
+	  </tbody><thead> </thead>
+    <tbody><tr>
+      <td width="15%" height="378"><p style="vertical-align:top "><img src="pc1.jpg" alt="" width="74" height="245" align="absbottom"></p></td>
+      <td width="70%" rowspan="2" align="center"  >
+		 <div style="position:static ; vertical-align: middle "><br><br>
 		<h1 align="center">Keep a track of your tasks !!</h1>
-      <p id="newtask" style="align-items: center; align-self: center;">
-        <input type="text" placeholder="Input your desired task " autocomplete="on" >
+      <p id="newtask" style="align-items: center; align-self:stretch ">
+        <input type="text" placeholder="Input your desired task " autocomplete="on">
         <button style="align-self: center; color: #000000; text-align: center;" id="push">Add</button>
       </p>
-		<p><b>To Do List Tasks</b></p>
-        <div id="tasks"></div>
+      <p style="font-family: aguafina-script "><strong>To Do List Tasks</strong></p>
+      <div id="tasks"></div>
     </div>
+		      <div style="font-size: 4px; text-align: left; font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', 'Arial Black', sans-serif;"><p style="font-size: 12px"><b>Steps to use:-</b></p>
+        <p style="font-size: 12px">Enter your task in textbox and Click on add</p>
+      
+			 
+        <p style="font-size: 12px">For To-Do list Tasks Completed/Reactived - Click</p>
+        <p style="font-size: 12px"><span style="text-align: left">Delete Task - Click on Delete icon</span></p></div>
+		 <p>&nbsp;</p>
 	  </td>
-     <td width="14%" height="358"><p style="vertical-align: bottom"><img src="pc2.png" width="74" height="245" alt=""/></p></td>
+     <td width="15%" height="378"><p style="vertical-align: bottom"><img src="pc2.png" alt="" width="74" height="245" align="absbottom"></p></td>
+    </tr>
+		 <tr>
+  <td></td>
+      <td > </td>
     </tr>
   </tbody>
 </table>
@@ -73,7 +83,7 @@
 		under
 	}
 	p{
-		font-family:"aguafina-script";
+		font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
 		text-align: center;
 		font-weight: 300;
 		font-size: 18px;
@@ -130,7 +140,7 @@
     padding: 30px 20px;
     margin-top: 20px;
     border-radius: 10px;
-    width: 92%;
+    width: 95%;
     position: relative;
 }
 .task{
@@ -167,5 +177,5 @@
 	
 }
 	</style>
-</body>
-</html>
+
+</body></html>
